@@ -76,11 +76,14 @@ const createDataPoints = (host, state, bandwidth) => {
     const adapterStates = createAdapterStates(state)
 
     for (const adapterState of adapterStates) {
+        const ad_active = adapterState['ad_pids'] !== 'none' && adapterState['ad_pids'] !== ''
+
         const stateDataPoint = {
             'measurement': 'state',
             'fields': {
                 ...adapterState,
-                'ad_pidcount': adapterState['ad_pids'] !== 'none' ? adapterState['ad_pids'].split(',').length : 0,
+                'ad_pidcount': ad_active ? adapterState['ad_pids'].split(',').length : 0,
+                'ad_active': ad_active,
             },
             'tags': {
                 'host': host,
