@@ -90,7 +90,7 @@ const createDataPoints = (host, state, bandwidth) => {
             'tags': {
                 'host': host,
                 'adapter': createAdapterName(adapterState),
-                'ad_enabled': adapterState['ad_enabled'],
+                'ad_enabled': ad_enabled,
             }
         }
 
