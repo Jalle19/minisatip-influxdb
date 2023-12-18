@@ -77,7 +77,7 @@ const createDataPoints = (host, state, bandwidth) => {
 
     for (const adapterState of adapterStates) {
         const ad_active = adapterState['ad_pids'] !== 'none' && adapterState['ad_pids'] !== ''
-        const ad_disabled = adapterState['ad_disabed'] === 1
+        const ad_disabled = adapterState['ad_disabled'] === 1
 
         // Skip if adapter is disabled
         if (ad_disabled) {
