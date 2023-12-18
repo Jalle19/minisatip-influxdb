@@ -28,6 +28,7 @@ const createAdapterStates = (state) => {
         adapterStates.push({
             'ad_idx': i,
             'ad_enabled': state['ad_enabled'][i],
+            'ad_disabled': state['ad_disabled'][i],
             'ad_type': state['ad_type'][i],
             'ad_pos': state['ad_pos'][i],
             'ad_strength': state['ad_strength'][i],
