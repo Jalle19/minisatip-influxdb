@@ -28,6 +28,7 @@ const createAdapterStates = (state) => {
         adapterStates.push({
             'ad_idx': i,
             'ad_enabled': state['ad_enabled'][i],
+            'ad_disabled': state['ad_disabled'][i],
             'ad_type': state['ad_type'][i],
             'ad_pos': state['ad_pos'][i],
             'ad_strength': state['ad_strength'][i],
@@ -77,6 +78,12 @@ const createDataPoints = (host, state, bandwidth) => {
 
     for (const adapterState of adapterStates) {
         const ad_active = adapterState['ad_pids'] !== 'none' && adapterState['ad_pids'] !== ''
+        const ad_disabled = adapterState['ad_disabled'] === 1
+
+        // Skip if adapter is disabled
+        if (ad_disabled) {
+            continue
+        }
 
         const stateDataPoint = {
             'measurement': 'state',
