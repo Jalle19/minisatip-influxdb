@@ -85,12 +85,12 @@ const createDataPoints = (host, state, bandwidth) => {
                 ...adapterState,
                 'ad_pidcount': ad_active ? adapterState['ad_pids'].split(',').length : 0,
                 'ad_active': ad_active,
-                'ad_enabled': ad_enabled,
+                'ad_enabled2': ad_enabled,
             },
             'tags': {
                 'host': host,
                 'adapter': createAdapterName(adapterState),
-                'ad_enabled': ad_enabled,
+                'ad_enabled2': ad_enabled,
             }
         }
 
