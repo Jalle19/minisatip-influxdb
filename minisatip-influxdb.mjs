@@ -97,6 +97,7 @@ const createDataPoints = (host, state, bandwidth) => {
             'tags': {
                 'host': host,
                 'adapter': createAdapterName(adapterState),
+                'freq': adapterState['ad_freq'],
             }
         }
 
